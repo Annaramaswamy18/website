@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pro-deployment
+  labels:
+    app: pro
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pro
+  template:
+    metadata:
+      labels:
+        app: pro
+    spec:
+      containers:
+      - name: pro
+        image: saisethuramu/capstone-2
+        ports:
+        - containerPort: 80
